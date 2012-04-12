@@ -1,0 +1,7 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Mono);
+
+body {
+  font-family: 'helvetica', 'PT Mono', sans-serif;
+  color: #262626;
+  background-color: #fff;
+}

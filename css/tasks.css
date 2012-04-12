@@ -1,0 +1,16 @@
+@import url(http://fonts.googleapis.com/css?family=Fugaz+One);
+
+.tasks {
+  color: #262626;
+}
+
+.tasks th {
+  font-family: 'Fugaz One', sans-serif;
+}
+
+.tasks tr {
+  background-color: #fcfcfc;
+}
+
+.tasks tr td {
+}
