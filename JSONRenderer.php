@@ -11,7 +11,7 @@ class JSONRenderer implements Renderer {
     }
 
     function render() {
-        echo '<div class="tasks container_12">';
+        echo '<div class="tasks">';
         while (($line = fgets($this->f)) !== FALSE) {
             // remove whitespace/line endings
             $line = trim($line);
@@ -41,10 +41,9 @@ class JSONRenderer implements Renderer {
                 break;
             }
             echo '<div class="task">';
-            echo '<div class="status grid_2">' . $task->{'status'} . '</div>';
-            echo '<div class="description grid_10">' . $task->{'description'} . '</div>';
-            echo '<div class="clear"></div>';
-            echo '<div class="meta grid_12">';
+            echo '<div class="status">' . $task->{'status'} . '</div>';
+            echo '<div class="description">' . $task->{'description'} . '</div>';
+            echo '<div class="meta">';
             if (isset($task->{'project'})) {
                 $project = $task->{'project'};
                 echo '<div class="project">' . $project . '</div>';

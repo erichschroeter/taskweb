@@ -1,7 +1,14 @@
 @import url(http://fonts.googleapis.com/css?family=PT+Mono);
 
 body {
+  margin: 50px 0px;
+  padding: 0px;
   font-family: 'helvetica', 'PT Mono', sans-serif;
   color: #262626;
   background-color: #fff;
+}
+
+#Content {
+  width: 960px;
+  margin: 0px auto;
 }
