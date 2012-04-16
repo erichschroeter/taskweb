@@ -11,7 +11,7 @@ class JSONRenderer implements Renderer {
     }
 
     function render() {
-        echo '<div class="tasks">';
+        echo '<div class="tasks container_12">';
         while (($line = fgets($this->f)) !== FALSE) {
             // remove whitespace/line endings
             $line = trim($line);
@@ -41,16 +41,17 @@ class JSONRenderer implements Renderer {
                 break;
             }
             echo '<div class="task">';
-            echo '<span class="status">' . $task->{'status'} . '</span>';
-            echo '<span class="description">' . $task->{'description'} . '</span>';
-            echo '<div class="meta">';
+            echo '<div class="status grid_2">' . $task->{'status'} . '</div>';
+            echo '<div class="description grid_10">' . $task->{'description'} . '</div>';
+            echo '<div class="clear"></div>';
+            echo '<div class="meta grid_12">';
             if (isset($task->{'project'})) {
                 $project = $task->{'project'};
-                echo '<span class="project">' . $project . '</span>';
+                echo '<div class="project">' . $project . '</div>';
             }
             if (isset($task->{'priority'})) {
                 $priority = $task->{'priority'};
-                echo '<span class="priority">' . $priority . '</span>';
+                echo '<div class="priority">' . $priority . '</div>';
             }
             if (isset($task->{'tags'})) {
                 $tags = $task->{'tags'};

@@ -4,13 +4,25 @@
   color: #262626;
 }
 
-.tasks th {
-  font-family: 'Fugaz One', sans-serif;
+.task {
+  cursor: pointer;
 }
 
-.tasks tr {
-  background-color: #fcfcfc;
+.task:hover {
+  background-color: #dfdfdf;
 }
 
-.tasks tr td {
+.meta {
+  display: none;
 }
+
+.tag {
+  color: blue;
+  background-color: #d4d4ff;
+  border: 1px solid blue;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 2px;
+}
+
