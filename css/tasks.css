@@ -6,6 +6,9 @@
   cursor: pointer;
   padding-top: 3px;
   padding-bottom: 3px;
+  margin-bottom: 2px;
+  border: 1px solid #babdb6;
+  background-color: #eeeeec;
 }
 
 .task:hover {
@@ -28,6 +31,16 @@
   display: none;
 }
 
+.annotation {
+  background-color: #eeeeec;
+  border: 1px solid #888a85;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 2px;
+}
+
 .tag {
   color: blue;
   background-color: #d4d4ff;
@@ -36,5 +49,6 @@
   -moz-border-radius: 5px;
   border-radius: 5px;
   padding: 2px;
+  margin: 2px;
 }
 

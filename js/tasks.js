@@ -18,6 +18,18 @@
         statusElem.css('color', 'black');
       }
 
+      var priorityElem = $('.priority', $this);
+      var priority = priorityElem.text();
+      if (priority == 'L') {
+        priorityElem.css('color', '#edd400');
+      } else if (priority == 'M') {
+        priorityElem.css('color', '#f57900');
+      } else if (priority == 'H') {
+        priorityElem.css('color', '#cc0000');
+      } else {
+        priorityElem.css('color', 'black');
+      }
+
     });
   };
 
