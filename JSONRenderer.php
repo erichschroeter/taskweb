@@ -45,24 +45,43 @@ class JSONRenderer implements Renderer {
             echo '<div class="description grid_10">' . $task->{'description'} . '</div>';
             echo '<div class="clear"></div>';
             echo '<div class="meta">';
+            // decrement columns when a value is present
+            $cols = 12;
 
-            echo '<label class="grid_1">Project:</label>';
-            echo '<div class="project grid_2">';
             if (isset($task->{'project'})) {
-                $project = $task->{'project'};
-                echo $project;
+                $cols -= 3;
+                echo '<label class="grid_1">Project:</label>';
+                echo '<div class="project grid_2">';
+                if (isset($task->{'project'})) {
+                    $project = $task->{'project'};
+                    echo $project;
+                }
+                echo '</div>';
             }
-            echo '</div>';
 
-            echo '<label class="grid_1">Priority:</label>';
-            echo '<div class="priority grid_1">';
             if (isset($task->{'priority'})) {
-                $priority = $task->{'priority'};
-                echo $priority;
+                $cols -= 2;
+                echo '<label class="grid_1">Priority:</label>';
+                echo '<div class="priority grid_1">';
+                if (isset($task->{'priority'})) {
+                    $priority = $task->{'priority'};
+                    echo $priority;
+                }
+                echo '</div>';
             }
-            echo '</div>';
 
-            echo '<div class="grid_7"></div>';
+            if (isset($task->{'due'})) {
+                $cols -= 3;
+                echo '<label class="grid_1">Due:</label>';
+                echo '<div class="due grid_2">';
+                if (isset($task->{'due'})) {
+                    $due = $task->{'due'};
+                    echo date('D, j M', strtotime($due));
+                }
+                echo '</div>';
+            }
+
+            echo '<div class="grid_' . $cols . '"></div>';
 
             if (isset($task->{'tags'})) {
                 $tags = $task->{'tags'};
