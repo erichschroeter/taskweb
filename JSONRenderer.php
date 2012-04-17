@@ -11,7 +11,7 @@ class JSONRenderer implements Renderer {
     }
 
     function render() {
-        echo '<div class="tasks">';
+        echo '<div class="tasks container_12">';
         while (($line = fgets($this->f)) !== FALSE) {
             // remove whitespace/line endings
             $line = trim($line);
@@ -40,29 +40,46 @@ class JSONRenderer implements Renderer {
                 default:
                 break;
             }
-            echo '<div class="task">';
-            echo '<div class="status">' . $task->{'status'} . '</div>';
-            echo '<div class="description">' . $task->{'description'} . '</div>';
+            echo '<div class="task grid_12">';
+            echo '<div class="status grid_2">' . $task->{'status'} . '</div>';
+            echo '<div class="description grid_10">' . $task->{'description'} . '</div>';
+            echo '<div class="clear"></div>';
             echo '<div class="meta">';
+
+            echo '<label class="grid_1">Project:</label>';
+            echo '<div class="project grid_2">';
             if (isset($task->{'project'})) {
                 $project = $task->{'project'};
-                echo '<div class="project">' . $project . '</div>';
+                echo $project;
             }
+            echo '</div>';
+
+            echo '<label class="grid_1">Priority:</label>';
+            echo '<div class="priority grid_1">';
             if (isset($task->{'priority'})) {
                 $priority = $task->{'priority'};
-                echo '<div class="priority">' . $priority . '</div>';
+                echo $priority;
             }
+            echo '</div>';
+
+            echo '<div class="grid_7"></div>';
+
             if (isset($task->{'tags'})) {
                 $tags = $task->{'tags'};
-                echo '<div class="tags">';
+                echo '<div class="clear"></div>';
+                echo '<h3>Tags</h3>';
+                echo '<div class="tags grid_12">';
                 foreach ($tags as $tag) {
                     echo '<span class="tag">' . $tag . '</span>';
                 }
                 echo '</div>';
             }
+
             if (isset($task->{'annotations'})) {
                 $annotations = $task->{'annotations'};
-                echo '<div class="annotations">';
+                echo '<div class="clear"></div>';
+                echo '<h3>Annotations</h3>';
+                echo '<div class="annotations grid_12">';
                 foreach ($annotations as $entry => $annotation) {
                     echo '<span class="annotation">' . $annotation->{'description'} . '</span>';
                 }

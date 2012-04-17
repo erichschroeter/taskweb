@@ -21,7 +21,7 @@
       var priorityElem = $('.priority', $this);
       var priority = priorityElem.text();
       if (priority == 'L') {
-        priorityElem.css('color', '#edd400');
+        priorityElem.css('color', '#204a87');
       } else if (priority == 'M') {
         priorityElem.css('color', '#f57900');
       } else if (priority == 'H') {

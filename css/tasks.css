@@ -16,6 +16,15 @@
   background-color: #dfdfdf;
 }
 
+.meta {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.meta label {
+  text-shadow: 1px 1px 1px #fff;
+}
+
 .status {
   display: inline;
   margin: 2px;
@@ -31,6 +40,16 @@
   display: none;
 }
 
+.project {
+  text-shadow: 1px 1px 1px #fff;
+  font-weight: bold;
+}
+
+.annotations {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .annotation {
   background-color: #eeeeec;
   border: 1px solid #888a85;
@@ -39,6 +58,11 @@
   border-radius: 5px;
   padding: 2px;
   margin: 2px;
+}
+
+.tags {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .tag {
